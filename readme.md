@@ -2,13 +2,13 @@
 
 <p align="center" class="flex justify-center">
     <a href="https://www.serverless-devs.com" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-pytorch&type=packageType">
+    <img src="http://editor.devsapp.cn/icon?package=fc-3d-cartoonization&type=packageType">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-pytorch" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-pytorch&type=packageVersion">
+  <a href="http://www.devsapp.cn/details.html?name=fc-3d-cartoonization" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=fc-3d-cartoonization&type=packageVersion">
   </a>
-  <a href="http://www.devsapp.cn/details.html?name=start-pytorch" class="ml-1">
-    <img src="http://editor.devsapp.cn/icon?package=start-pytorch&type=packageDownload">
+  <a href="http://www.devsapp.cn/details.html?name=fc-3d-cartoonization" class="ml-1">
+    <img src="http://editor.devsapp.cn/icon?package=fc-3d-cartoonization&type=packageDownload">
   </a>
 </p>
 
@@ -33,7 +33,7 @@
 
 # 代码 & 预览
 
-- [ :smiley_cat:  源代码](https://github.com/devsapp/start-fc/blob/main/start-pytorch)
+- [ :smiley_cat:  源代码](https://github.com/devsapp/fc-3d-cartoonization)
 
 </codepre>
 
@@ -43,15 +43,15 @@
 
 <appcenter>
 
--  :fire:  通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=start-pytorch) ，
-[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=start-pytorch)  该应用。 
+-  :fire:  通过 [Serverless 应用中心](https://fcnext.console.aliyun.com/applications/create?template=fc-3d-cartoonization) ，
+[![Deploy with Severless Devs](https://img.alicdn.com/imgextra/i1/O1CN01w5RFbX1v45s8TIXPz_!!6000000006118-55-tps-95-28.svg)](https://fcnext.console.aliyun.com/applications/create?template=fc-3d-cartoonization)  该应用。 
 
 </appcenter>
 
 - 通过 [Serverless Devs Cli](https://www.serverless-devs.com/serverless-devs/install) 进行部署：
     - [安装 Serverless Devs Cli 开发者工具](https://www.serverless-devs.com/serverless-devs/install) ，并进行[授权信息配置](https://www.serverless-devs.com/fc/config) ；
-    - 初始化项目：`s init start-pytorch -d start-pytorch`   
-    - 进入项目，并进行项目部署：`cd start-pytorch && s deploy -y`
+    - 初始化项目：`s init fc-3d-cartoonization -d fc-3d-cartoonization`   
+    - 进入项目，并进行项目部署：`cd fc-3d-cartoonization && s deploy -y`
 
 </deploy>
 
