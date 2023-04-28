@@ -1,22 +1,20 @@
 edition: 1.0.0
-name: fc-3d-cartoonization-2
+name: fc-3d-cartoonization-gpu
 access: default
 vars:
-  region: "cn-hangzhou"
-  # region: "{{ region }}"
-  service: 'fc-3d-cartoonization-2'
+  region: "{{ region }}"
+  service: 'fc-3d-cartoonization-gpu'
 services:
-  fc-3d-cartoonization-2:
+  fc-3d-cartoonization-gpu:
     component: fc
     props:
-      region: "cn-hangzhou"
-      # region: ${vars.region}
+      region: ${vars.region}
       service:
-        description: fc-3d-cartoonization-2
+        description: fc-3d-cartoonization-gpu
         internetAccess: true
         ossMountConfig:
           mountPoints: []
-        name: "fc-3d-cartoonization-2"
+        name: ${vars.service}
       function:
         handler: index.handler
         timeout: 7200
@@ -28,7 +26,8 @@ services:
         customContainerConfig:
           args: ''
           accelerationType: Default
-          image: "registry.cn-hangzhou.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:0.3"
+          image: "{{ imageUrl }}"
+          # image: "registry.cn-hangzhou.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:v1"
           accelerationInfo:
             status: Preparing
           command: ''
@@ -37,7 +36,7 @@ services:
         memorySize: 32768
         environmentVariables: {}
         gpuMemorySize: 16384
-        name: fc-3d-cartoonization-2
+        name: fc-3d-cartoonization-gpu
         asyncConfiguration: {}
       triggers:
         - name: defaultTrigger
@@ -57,57 +56,3 @@ services:
           protocol: HTTP
           routeConfigs:
             - path: /*
-  # stable-diffusion-portal:
-    # component: fc
-    # actions:
-    #   pre-deploy:
-    #     - run: npm i --force
-    #       path: ./code
-    # props:
-    #   region: ${vars.region}
-    #   service:
-    #     description: stable-diffusion
-    #     internetAccess: true
-    #     ossMountConfig:
-    #       mountPoints: []
-    #     name: ${vars.service}
-    #   function:
-    #     handler: index.handler
-    #     description: stable-diffusion web界面
-    #     timeout: 6000
-    #     diskSize: 512
-    #     caPort: 8080
-    #     layers:
-    #       - acs:fc:${vars.region}:official:layers/Nodejs16/versions/2
-    #     instanceType: c1
-    #     runtime: custom
-    #     cpu: 4
-    #     instanceConcurrency: 10
-    #     memorySize: 8192
-    #     environmentVariables:
-    #       proxyUrl: ${stable-diffusion-original.output.url.custom_domain[0].domain}
-    #       PATH: >-
-    #         /opt/nodejs16/bin::/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
-    #       NODE_PATH: /opt/nodejs/node_modules
-    #     name: stable-diffusion-portal
-    #     asyncConfiguration: {}
-    #     codeUri: 'code'
-    #   triggers:
-    #     - name: sd-portal
-    #       description: ''
-    #       type: http
-    #       config:
-    #         methods:
-    #           - GET
-    #           - POST
-    #           - PUT
-    #           - DELETE
-    #           - HEAD
-    #           - OPTIONS
-    #         authType: anonymous
-    #         disableURLInternet: false
-    #   customDomains:
-    #     - domainName: auto
-    #       protocol: HTTP
-    #       routeConfigs:
-    #         - path: /*
