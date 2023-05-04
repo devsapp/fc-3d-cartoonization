@@ -30,4 +30,4 @@ Parameters:
       title: fc-3d-cartoonization-gpu 镜像地址
       type: string
       default: ''
-      description: 'fc-3d-cartoonization-gpu 的镜像地址，您可以参考或者使用社区贡献者提供的相关镜像如杭州region镜像地址: registry.cn-hangzhou.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:v1'
+      description: 'fc-3d-cartoonization-gpu 的镜像地址，您可以参考或者使用社区贡献者提供的相关镜像如 杭州region镜像地址: registry.cn-hangzhou.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:v1；深圳region镜像地址: registry.cn-shenzhen.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:v1；上海region镜像地址: registry.cn-shanghai.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:v1；杭州region镜像地址: registry.cn-hangzhou.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:v1；北京region镜像地址: registry.cn-beijing.aliyuncs.com/fc-stable-diffusion/3d-cartoonization:v1'
