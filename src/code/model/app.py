@@ -10,32 +10,40 @@ import os
 import glob
 from flask import render_template
 
-app = Flask(__name__, 
-            static_url_path='', 
-            static_folder='public',)
-img_cartoon = pipeline(Tasks.image_portrait_stylization, 
+# app = Flask(__name__, 
+#             static_url_path='',
+#             template_folder='dist', 
+#             static_folder='dist',)
+
+app = Flask(__name__)
+
+img_cartoon = 0
+
+async def init_model():
+    global img_cartoon
+    img_cartoon = pipeline(Tasks.image_portrait_stylization, 
                        model='damo/cv_unet_person-image-cartoon-3d_compound-models')
-# model = Model.from_pretrained("./models/cv_unet_person-image-cartoon-3d_compound-models")
-# img_cartoon = pipeline(Tasks.image_portrait_stylization, 
-#                        model=model)
+    return img_cartoon
 
 CACHE_DIR = "/etc/image-stylization/img_cache"
 
-@app.route("/")
-def index():
-    return render_template('index.html')
-
 @app.route("/api/image-stylization", methods=["POST"])
-def image_stylization():
+async def image_stylization():
     file = request.files['file']
     filename = secure_filename(file.filename)
     files_to_remove = glob.glob(os.path.join(CACHE_DIR, "*"))
     for f in files_to_remove:
         os.remove(f)
     file.save(os.path.join(CACHE_DIR, filename))
+    if (img_cartoon == 0):
+        await init_model()
     result = img_cartoon(os.path.join(CACHE_DIR, filename))
     retval, buffer = cv2.imencode('.png', result[OutputKeys.OUTPUT_IMG])
     response = make_response(buffer.tobytes())
     response.headers['Content-Type'] = 'image/png'
-    response.headers['Access-Control-Allow-Origin'] = '*'
+    # response.headers['Access-Control-Allow-Origin'] = '*'
     return response
+
+# @app.route("/")
+# def index():
+#     return render_template('index.html')
