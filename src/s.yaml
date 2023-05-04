@@ -64,7 +64,7 @@ services:
     component: fc
     actions:
       pre-deploy:
-        - run: yarn && yarn build
+        - run: npm i && npm run build
           path: ./code/web
     props:
       region: ${vars.region}

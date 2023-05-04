@@ -24,8 +24,8 @@ Parameters:
       enum:
         - cn-beijing
         - cn-hangzhou
-        - cn-shanghai
-        - cn-shenzhen
+        # - cn-shanghai
+        # - cn-shenzhen
     imageUrl:
       title: fc-3d-cartoonization-gpu 镜像地址
       type: string
