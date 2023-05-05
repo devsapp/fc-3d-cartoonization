@@ -22,7 +22,7 @@ services:
         caPort: 8080
         instanceType: fc.gpu.tesla.1
         runtime: custom-container
-        cpu: 1
+        cpu: 2
         customContainerConfig:
           args: ''
           accelerationType: Default
@@ -33,7 +33,7 @@ services:
           command: ''
           webServerMode: true
         instanceConcurrency: 100
-        memorySize: 512
+        memorySize: 4096
         environmentVariables: {}
         gpuMemorySize: 8192
         name: model
