@@ -44,6 +44,6 @@ async def image_stylization():
     # response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
-# @app.route("/")
-# def index():
-#     return render_template('index.html')
+@app.route("/api/keep")
+def keep():
+    return 'keep'

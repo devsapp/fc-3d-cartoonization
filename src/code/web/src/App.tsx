@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.less'
 import { MantineProvider } from '@mantine/core';
 import { Image, Center, FileButton, Button, Box, LoadingOverlay } from '@mantine/core';
@@ -8,6 +8,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [stylized, setStylized] = useState<ArrayBuffer | string | null>(null);
+  useEffect(() => axios.get((window as any).ENDPOINT + "/api/keep"), [])
+  
   const uploadAndPlay = async (uploaded: File) => {
     const payload = uploaded ?? file;
     setFile(payload);
