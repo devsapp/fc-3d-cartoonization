@@ -8,7 +8,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [stylized, setStylized] = useState<ArrayBuffer | string | null>(null);
-  useEffect(() => axios.get((window as any).ENDPOINT + "/api/keep"), [])
+  useEffect(() => { axios.get((window as any).ENDPOINT + "/api/keep") }, [])
   
   const uploadAndPlay = async (uploaded: File) => {
     const payload = uploaded ?? file;
