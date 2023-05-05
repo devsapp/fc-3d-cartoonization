@@ -25,7 +25,7 @@ async def init_model():
                        model='damo/cv_unet_person-image-cartoon-3d_compound-models')
     return img_cartoon
 
-CACHE_DIR = "/etc/image-stylization/img_cache"
+CACHE_DIR = os.getcwd() + "/img_cache"
 
 @app.route("/api/image-stylization", methods=["POST"])
 async def image_stylization():

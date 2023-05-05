@@ -19,6 +19,8 @@ RUN pip install dashscope==1.0.3 \
     tensorflow==2.12.0 \
     easydict==1.10
 
+RUN pip install flask[async]
+
 COPY . .
 
 RUN python3 model_cache.py
