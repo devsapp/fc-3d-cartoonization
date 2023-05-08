@@ -27,6 +27,8 @@ async def init_model():
 
 CACHE_DIR = os.getcwd() + "/img_cache"
 
+init_model()
+
 @app.route("/api/image-stylization", methods=["POST"])
 async def image_stylization():
     file = request.files['file']

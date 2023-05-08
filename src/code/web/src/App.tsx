@@ -40,6 +40,7 @@ function App() {
           {(props) => <Button {...props} variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>Upload and Play!</Button>}
         </FileButton>
       </div>
+      <div className="tips">Upload photo with people / 请上传带有人像的照片</div>
       <Center className="pictures" mt={60} maw={'40vw'} mah={'50%'} mx="auto">
         <Box mah={'40vw'} pos="relative">
           <Image className="original" mah={'40vw'} mx="auto" radius="md" src={ file ? URL.createObjectURL(file) : "./demo.png"} alt="original picture" />
@@ -53,9 +54,12 @@ function App() {
         <a href="https://serverless-devs.com/" target="_blank">
           <Image className="logo devs-logo" maw={100} src={"./serverlessdevs-logo.png"}/>
         </a>
-        <a href="https://modelscope.cn/" target="_blank">
+        <a href="https://modelscope.cn/models/damo/cv_unet_person-image-cartoon-3d_compound-models/summary" target="_blank">
           <Image className="logo model-logo" maw={250} src={"./modelscope-logo.svg"}/>
         </a>
+      </div>
+      <div className="license">
+        <a target="_blank" href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>
       </div>
     </MantineProvider>
   )
