@@ -3,7 +3,7 @@ Type: Application
 Name: fc-3d-cartoonization
 Provider:
   - 阿里云
-Version: 1.0
+Version: 1.0.0
 Description: 使用serverless devs部署3d卡通化风格迁移模型到阿里云函数计算上
 HomePage: 项目首页地址
 Tags: #标签详情
